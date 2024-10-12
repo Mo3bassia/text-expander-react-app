@@ -45,6 +45,7 @@ function TextExpander({
   buttonColor = "blue",
   expanded = false,
   collapsedNumWords = 20,
+  className = "box",
 }) {
   const [isOpen, setIsOpen] = useState(expanded);
 
@@ -53,15 +54,15 @@ function TextExpander({
   }
 
   return (
-    <div className="box">
-      {!isOpen
+    <div className={className}>
+      {isOpen
         ? children
         : children
             ?.split(" ")
             .filter((e, i) => i <= collapsedNumWords - 1)
             .join(" ") + " ... "}
       <BtnCollapse
-        text={isOpen ? expandButtonText : collapseButtonText}
+        text={!isOpen ? expandButtonText : collapseButtonText}
         onClickFunc={() => handleToggle()}
         buttonColor={buttonColor}
       />
