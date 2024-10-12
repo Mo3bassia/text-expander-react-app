@@ -43,7 +43,7 @@ function TextExpander({
   expandButtonText = "Show more",
   collapseButtonText = "Show less",
   buttonColor = "blue",
-  expanded = true,
+  expanded = false,
   collapsedNumWords = 20,
 }) {
   const [isOpen, setIsOpen] = useState(expanded);
